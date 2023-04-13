@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react'
 
 export const useDownloadUrl = (
   filePath: string | undefined,
-  key: 'rta_avatars' | 'rta_posts'
+  key: 'rta-avatars' | 'rta-posts'
 ) => {
   const [isLoading, setIsLoading] = useState(false)
   const [fullUrl, setFullUrl] = useState('')
-  const bucketName = key === 'rta_avatars' ? 'rta_avatars' : 'rta_posts'
+  const bucketName = key === 'rta-avatars' ? 'rta-avatars' : 'rta-posts'
   useEffect(() => {
     if (filePath) {
       const download = async () => {

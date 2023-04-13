@@ -13,10 +13,12 @@ export const useUploadAvatarImg = () => {
       }
       const file = e.target.files[0]
       const fileExt = file.name.split('.').pop()
+      console.log(fileExt)
       const fileName = `${Math.random()}.${fileExt}`
       const filePath = `${fileName}`
+      console.log(filePath)
       const { error } = await supabase.storage
-        .from('rta_avatars')
+        .from('rta-avatars')
         .upload(filePath, file)
       if (error) throw new Error(error.message)
       updateProfile({ ...editedProfile, avatar_url: filePath })

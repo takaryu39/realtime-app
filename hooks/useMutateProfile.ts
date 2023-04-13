@@ -34,7 +34,7 @@ export const useMutateProfile = () => {
     },
     {
       onSuccess: (res) => {
-        queryClient.setQueryDefaults(['rta_profile'], res[0])
+        queryClient.setQueryData(['rta_profile'], res[0])
       },
       onError(err: any) {
         alert(err.message)
