@@ -28,7 +28,7 @@ export const UserProfile: FC = () => {
       avatar_url: editedProfile.avatar_url,
     })
   }
-  console.log(profile?.updated_at)
+  // console.log(editedProfile.avatar_url, editedProfile.username)
 
   return (
     <>
@@ -75,7 +75,7 @@ export const UserProfile: FC = () => {
         <Image
           src={avatarUrl}
           alt="Avatar"
-          className="rounded-full m-auto"
+          className="rounded-full"
           width={150}
           height={150}
         />

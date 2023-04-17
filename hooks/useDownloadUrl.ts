@@ -19,6 +19,7 @@ export const useDownloadUrl = (
           setIsLoading(false)
           throw error
         }
+
         setFullUrl(URL.createObjectURL(data!))
         setIsLoading(false)
       }

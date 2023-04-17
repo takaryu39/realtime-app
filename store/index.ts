@@ -1,4 +1,4 @@
-import { EditedProfile } from '@/types'
+import { EditedNotice, EditedPost, EditedProfile } from '@/types'
 import { Session } from '@supabase/supabase-js'
 import { create } from 'zustand'
 
@@ -9,6 +9,12 @@ type State = {
   editedProfile: EditedProfile
   updateEditedProfile: (payload: EditedProfile) => void
   resetEditedProfile: () => void
+  editedNotice: EditedNotice
+  updateEditedNotice: (payload: EditedNotice) => void
+  resetEditedNotice: () => void
+  editedPost: EditedPost
+  updateEditedPost: (payload: EditedPost) => void
+  resetEditedPost: () => void
 }
 const useStore = create<State>((set) => ({
   //グローバルで扱える状態を管理
@@ -25,6 +31,32 @@ const useStore = create<State>((set) => ({
     }),
   resetEditedProfile: () =>
     set({ editedProfile: { username: '', favorites: '', avatar_url: '' } }),
+  editedNotice: { id: '', content: '' },
+  updateEditedNotice: (payload) =>
+    set({
+      editedNotice: {
+        id: payload.id,
+        content: payload.content,
+      },
+    }),
+  resetEditedNotice: () =>
+    set({
+      editedNotice: {
+        id: '',
+        content: '',
+      },
+    }),
+  editedPost: { id: '', title: '', post_url: '' },
+  updateEditedPost: (payload) =>
+    set({
+      editedPost: {
+        id: payload.id,
+        title: payload.title,
+        post_url: payload.post_url,
+      },
+    }),
+  resetEditedPost: () =>
+    set({ editedPost: { id: '', title: '', post_url: '' } }),
 }))
 
 export default useStore
