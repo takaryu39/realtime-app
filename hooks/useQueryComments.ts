@@ -1,3 +1,4 @@
+import { Comment } from '@/types'
 import { supabase } from '@/utils/supabase'
 import { useQuery } from 'react-query'
 
@@ -14,7 +15,7 @@ export const useQueryComments = (postId: string) => {
     return data
   }
   return useQuery<Comment[], Error>({
-    queryKey: ['comments', postId],
+    queryKey: ['rta_comments', postId],
     queryFn: getComments,
     staleTime: Infinity,
   })

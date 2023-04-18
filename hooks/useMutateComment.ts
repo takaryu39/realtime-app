@@ -1,4 +1,4 @@
-import { EditedComment } from '@/types'
+import { Comment, EditedComment } from '@/types'
 import { supabase } from '@/utils/supabase'
 import { useMutation } from 'react-query'
 
