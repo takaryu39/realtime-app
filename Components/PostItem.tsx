@@ -13,9 +13,8 @@ import {
 import Image from 'next/image'
 import React, { FC, Suspense, memo, useState } from 'react'
 import { Spinner } from './Spinner'
-import { Comments } from './Comments'
 import { ErrorBoundary } from 'react-error-boundary'
-import { log } from 'console'
+import { Comments } from './Comments'
 
 export const PostItemMemo: FC<Omit<Post, 'created_at'>> = ({
   id,
